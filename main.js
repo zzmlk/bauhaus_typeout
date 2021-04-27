@@ -130,7 +130,7 @@ function keyPressed() {
         rect(300, 200, 80, 80);
     }
 
-    if (key === 'delete') {
-        main.remove();
-    }
+    // if (key === 'delete') {
+    //     background(243, 238, 230);
+    // }
 }
