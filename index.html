@@ -15,13 +15,22 @@
 
     <main>
         <div class="header">
-            <input type="text" id="prompt" name="prompt" placeholder="Type something here"><br>
+            <!-- <input type="text" id="prompt" name="prompt" placeholder="Type something here"><br> -->
+            <input type="text" onfocus="this.value=''" value="Type something here">
         </div>
+
+
 
     </main>
 
 
     <script src="main.js"></script>
+    <script src="constructor.js"></script>
+
+    <div class="footer">
+        <h4 id="download" onclick="saveFuncstion()">Save</h4>
+        <h4 id="refresh" onclick="refreshFuncstion()"> Refresh</h4>
+    </div>
 
 </body>
 
