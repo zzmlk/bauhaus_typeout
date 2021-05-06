@@ -1,208 +1,195 @@
 // window.alert("click the canvas and play with the keyboard");
 
 var shape = [];
-
-
+let value = 0;
 
 function setup() {
     createCanvas(400, 400);
     noStroke();
-    background(243, 238, 230);
+    //    background(243, 238, 230);
     // saveCanvas();
-
+    removeBtn = createButton("Save Canvas");
+    removeBtn.position(30, 200)
+    removeBtn.mousePressed(saveToFile);
 }
 
-
+function saveToFile() {
+    // Save the current canvas to file as png
+    saveCanvas('mycanvas', 'png')
+}
 
 function draw() {
+    background(243, 238, 230)
     for (let i = 0; i < shape.length; i++) {
         shape[i].display();
     }
-
 }
 
 function keyPressed() {
-
-
-
-    // var s = new Objects();
-    // shape.push(s);
-
-    // shape.push(new Objects());
-
-    // if (key === 'a') {
-    //     shape.push(
-    //         fill(45, 83, 189), //blue
-    //         rect(50, 50, 100, 100),
-
-    //     );
-    // }
-
-
-
-}
-
-
-
-// ----------------------------------------------------------
-
-
-
-function keyPressed() {
-
-    for (let i = 0; i < shape.length; i++) {
-        if (keyCode === LEFT_ARROW) {
-            background(243, 238, 230);
-            // shape.pop();
-            // shape.splice(i, 1);
-            // console.log(shape);
-        }
-
-    }
-
-    // var s = new Shapes(x, y, h, w);
-    // shape.push(s);
-
-    // if (keyCode === LEFT_ARROW) {
-    //     // background(243, 238, 230);
-    //     // shape.pop();
-    //     shape.splice();
-    //     console.log(shape);
-    // }
-
     if (key === 'a') {
-
-
-        shape.push(
-            rect(50, 50, 100, 100),
-            fill(45, 83, 189)
-        );
-        console.log(shape);
+        var b = new DrawRect(50, 50, 100, 100, 45, 83, 189)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
 
     if (key === 'b') {
-
-        shape.push(
-            rect(300, 150, 80, 80),
-            fill(255, 255, 255)
-        );
+        var b = new DrawRect(300, 150, 80, 80, 255, 255, 255)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
 
     if (key === 'c') {
-        fill(255, 255, 255); //white
-        triangle(20, 100, 65, 20, 110, 100);
+        var b = new DrawTriangle(20, 100, 65, 20, 110, 100, 255, 255, 255)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
 
     if (key === 'd') {
-        fill(255, 255, 255); //white
-        circle(130, 250, 100);
+        var b = new DrawCircle(130, 250, 100, 255, 255, 255)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'e') {
-        fill(255, 217, 64); //yellow
-        triangle(100, 200, 175, 75, 250, 200);
+        var b = new DrawTriangle(100, 200, 175, 75, 250, 200, 255, 217, 64)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'f') {
-        fill(45, 83, 189);
-        circle(300, 300, 80);
+        var b = new DrawCircle(300, 300, 80, 45, 83, 189)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'g') {
-        fill(10, 10, 10); //black
-        rect(0, 120, 400, 5);
+        var b = new DrawRect(0, 120, 400, 5, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'h') {
-
-        fill(10, 10, 10); //black
-        rect(340, 200, 50, 50);
+        var b = new DrawRect(340, 200, 50, 50, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'i') {
-        fill(204, 29, 16); //red
-        circle(300, 100, 100);
-
+        var b = new DrawCircle(300, 100, 100, 204, 29, 16)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'j') {
-        fill(10, 10, 10);
-        circle(250, 100, 50);
+        var b = new DrawCircle(250, 100, 50, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'k') {
-        fill(204, 29, 16);
-        rect(15, 300, 70);
+        var b = new DrawRect(15, 250, 70, 100, 29, 16)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'l') {
-        fill(10, 10, 10); //black
-        rect(180, 0, 5, 400);
+        var b = new DrawRect(180, 0, 5, 400, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
-
     if (key === 'm') {
-        fill(10, 10, 10);
-        triangle(260, 30, 315, 120, 370, 30);
+        var b = new DrawTriangle(260, 30, 315, 120, 370, 30, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'n') {
-        fill(255, 217, 64);
-        rect(160, 250, 60, 60);
+        var b = new DrawRect(160, 250, 60, 60, 255, 217, 64)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'o') {
-        fill(10, 10, 10); //black
-        rect(100, 0, 5, 400);
-
+        var b = new DrawRect(100, 0, 5, 400, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'p') {
-        fill(45, 83, 189);
-        triangle(220, 380, 265, 300, 310, 380);
+        var b = new DrawTriangle(220, 380, 265, 300, 310, 380, 45, 83, 189)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'q') {
-        fill(10, 10, 10); //black
-        rect(300, 0, 5, 400);
+        var b = new DrawRect(300, 0, 5, 400, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'r') {
-        fill(204, 29, 16);
-        circle(50, 50, 50);
+        var b = new DrawCircle(50, 50, 50, 204, 29, 16)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 's') {
-        fill(10, 10, 10); //black
-        rect(0, 320, 400, 5);
+        var b = new DrawRect(0, 320, 400, 5, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 't') {
-        fill(255, 217, 64);
-        circle(100, 50, 50);
+        var b = new DrawCircle(100, 50, 50, 255, 217, 64)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'u') {
-        fill(204, 29, 16); //red
-        triangle(200, 350, 265, 235, 330, 350);
+        var b = new DrawTriangle(200, s350, 265, 235, 330, 350, 204, 29, 16)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'v') {
-        fill(45, 83, 189);
-        rect(20, 240, 130, 130);
+        var b = new DrawRect(20, 240, 130, 130, 45, 83, 189)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'w') {
-        fill(10, 10, 10);
-        circle(180, 200, 150);
+        var b = new DrawCircle(180, 200, 150, 10, 10, 10)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'x') {
-        fill(204, 29, 16);
-        rect(220, 50, 140, 200);
+        var b = new DrawRect(220, 50, 140, 200, 204, 29, 16)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
     if (key === 'y') {
-        fill(255, 217, 64);
-        circle(300, 100, 70);
+        var b = new DrawCircle(300, 100, 70, 255, 217, 64)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
-
     if (key === 'z') {
-        fill(255, 217, 64);
-        rect(300, 200, 80, 80);
+        var b = new DrawRect(300, 200, 80, 80, 255, 217, 64)
+        shape.push(b)
+            //        console.log("work")
+            //        console.log(shape)
     }
 
 
-}
-
-document.getElementsById("download").addEventListener("click", function() {
-    saveCanvas()
-});
-
-document.getElementsById("refresh").addEventListener("click", function() {
-    background(243, 238, 230)
-
-});
-
-function saveFunction() {
-    saveCanvas()
+    if (keyCode === BACKSPACE) {
+        shape.pop()
+        console.log("delete")
+        console.log(shape)
+    }
 }

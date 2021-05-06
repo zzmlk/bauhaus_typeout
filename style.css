@@ -40,7 +40,7 @@ main {
     width: 50%;
 }
 
-#refresh {
+.refresh {
     width: 50%;
     text-align: right;
 }
