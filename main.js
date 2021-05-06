@@ -8,15 +8,25 @@ function setup() {
     noStroke();
     //    background(243, 238, 230);
     // saveCanvas();
-    removeBtn = createButton("Save");
-    // removeBtn.position(550, 600)
-    removeBtn.mousePressed(saveToFile);
+    // removeBtn = createButton("Save");
+    // removeBtn.id = "save"
+    // removeBtn.mousePressed(saveToFile);
+    // removeBtn = createButton("Erase");
+    // removeBtn.mousePressed(reload);
+
 }
 
-function saveToFile() {
-    // Save the current canvas to file as png
+function saveFunction() {
     saveCanvas('mycanvas', 'png')
 }
+
+
+function eraseFunction() {
+    window.location.reload()
+
+}
+
+
 
 function draw() {
     background(243, 238, 230)
@@ -150,7 +160,7 @@ function keyPressed() {
             //        console.log(shape)
     }
     if (key === 'u') {
-        var b = new DrawTriangle(200, s350, 265, 235, 330, 350, 204, 29, 16)
+        var b = new DrawTriangle(200, 350, 265, 235, 330, 350, 204, 29, 16)
         shape.push(b)
             //        console.log("work")
             //        console.log(shape)
