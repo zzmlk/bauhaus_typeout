@@ -8,8 +8,8 @@ function setup() {
     noStroke();
     //    background(243, 238, 230);
     // saveCanvas();
-    removeBtn = createButton("Save Canvas");
-    removeBtn.position(30, 200)
+    removeBtn = createButton("Save");
+    // removeBtn.position(550, 600)
     removeBtn.mousePressed(saveToFile);
 }
 
