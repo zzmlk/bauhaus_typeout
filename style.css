@@ -37,18 +37,6 @@ body {
     -ms-writing-mode: vertical-rl;
 }
 
-.lowleft {
-    position: absolute;
-    top: 80%;
-    left: 2%;
-}
-
-.lowright {
-    position: absolute;
-    left: 89%;
-    top: 80%;
-}
-
 main {
     display: flex;
     align-items: center;
@@ -72,17 +60,6 @@ input[type=text] {
     font-size: 24px;
     font-weight: 800;
 }
-
-
-/* #download {
-    width: 50%;
-} */
-
-
-/* .refresh {
-    width: 50%;
-    text-align: left;
-} */
 
 .btns {
     width: 400px;
